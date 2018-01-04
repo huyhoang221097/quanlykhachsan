@@ -1,1 +1,9 @@
 E:\quanlykhachsan\quanlykhachsan\bin\Debug\quanlykhachsan.exe.config
+E:\HuyHoang\quanlykhachsan\bin\Debug\quanlykhachsan.exe.config
+E:\HuyHoang\quanlykhachsan\bin\Debug\quanlykhachsan.exe
+E:\HuyHoang\quanlykhachsan\bin\Debug\quanlykhachsan.pdb
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.csprojResolveAssemblyReference.cache
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.Properties.Resources.resources
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.csproj.GenerateResource.Cache
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.exe
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.pdb
