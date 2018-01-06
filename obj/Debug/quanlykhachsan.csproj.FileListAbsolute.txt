@@ -7,3 +7,4 @@ E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.Properties.Resources.resourc
 E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.csproj.GenerateResource.Cache
 E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.exe
 E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.pdb
+E:\HuyHoang\quanlykhachsan\obj\Debug\Quanlykhachsan.Form1.resources
