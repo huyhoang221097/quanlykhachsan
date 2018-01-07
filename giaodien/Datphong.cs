@@ -28,16 +28,18 @@ namespace quanlykhachsan.giaodien
         {
 
         }
-
+        int time;
         private void cboxLoaiTg_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboxLoaiTg.SelectedItem.ToString() == "Giờ")
             {
-                MessageBox.Show("Giờ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                time = 1;
+                MessageBox.Show("Giờ" + time, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             if (cboxLoaiTg.SelectedItem.ToString() == "Ngày")
             {
-                MessageBox.Show("Ngày", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                time = 2;
+                MessageBox.Show("Ngày" + time, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
     }
