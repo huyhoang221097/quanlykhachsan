@@ -40,11 +40,22 @@ namespace quanlykhachsan.giaodien
             Gribview_DSPhong.DataSource = Table;
         }
 
-       
+        private void Timphong(string x)
+        {
+            SqlConnection Cnn = db._DbContext();
+            Cnn.Open();
+            string sql = "select IDphong as [Mã Phòng], TenPhong as [Tên Phòng], sogiuong [Số Giường], Loaiphong as [Loại Phòng], Tentrangthai as [Trạng Thái] From Phong P INNER JOIN TrangThai T On P.IDTrangthai=T.IDTrangthai where TenPhong = @tenphong";
+            Cmd = new SqlCommand(sql, Cnn);
+            Cmd.Parameters.Add(new SqlParameter("@tenphong", x));
+            SqlDataAdapter alap = new SqlDataAdapter(Cmd);
+            DataTable Table = new DataTable();
+            alap.Fill(Table);
+            Gribview_DSPhong.DataSource = Table;
+        }
 
         private void btTimPhong_Click(object sender, EventArgs e)
         {
-            //Timphong(tbtimphong.Text);
+            Timphong(tbtimphong.Text);
         }
     }
 }
