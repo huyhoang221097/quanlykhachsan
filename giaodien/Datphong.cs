@@ -110,10 +110,16 @@ namespace quanlykhachsan.giaodien
         #endregion=========================================
 
         #region========== Insert Thanh Toan ============
+        int day = DateTime.Now.Day;
+        int month = DateTime.Now.Month;
+        int year = DateTime.Now.Year;
+        
+
+        
+
         private void AddThanhToan()
         {
             SqlConnection Cnn = db._DbContext();
-
 
             try
             {
@@ -121,8 +127,8 @@ namespace quanlykhachsan.giaodien
                 string themHD = "INSERT INTO [dbo].[ThanhToan]([ID],[Ngaydat],[Ngaytra],[Thanhtien]) VALUES(@ID,@Ngaydat,@Ngaytra,@Thanhtien)";
                 Cmd = new SqlCommand(themHD, Cnn);
                 Cmd.Parameters.AddWithValue("@ID", tbTenKh.Text);
-                Cmd.Parameters.AddWithValue("@NgayDat", tbSDT.Text);
-                Cmd.Parameters.AddWithValue("@Ngaytra", tbCMND.Text);
+                Cmd.Parameters.AddWithValue("@NgayDat", year + "-" + month + "-" + day);
+                Cmd.Parameters.AddWithValue("@Ngaytra", year + "-" + month + "-" + day);
                 Cmd.Parameters.AddWithValue("@Thanhtien", tbDiaChi.Text);
                 Cmd.ExecuteNonQuery();
                 Cnn.Close();
@@ -143,6 +149,7 @@ namespace quanlykhachsan.giaodien
             if(KiemTraTextbox()==false)
             {
                 AddKH();
+                ShowMaKH();
             }
             
         }
