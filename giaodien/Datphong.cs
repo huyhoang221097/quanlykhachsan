@@ -12,9 +12,20 @@ namespace quanlykhachsan.giaodien
 {
     public partial class Datphong : Form
     {
-        public Datphong()
+        public Datphong(string x)
         {
             InitializeComponent();
+            lbTenphong.Text = x;
+        }
+
+        private void Datphong_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
