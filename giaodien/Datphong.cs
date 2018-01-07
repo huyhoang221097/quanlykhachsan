@@ -66,7 +66,7 @@ namespace quanlykhachsan.giaodien
             try
             {
                 Cnn.Open();
-                string themHD = "INSERT INTO [dbo].[ThanhToan]([IDPhong],[IDKH],[LoaiTG],[TgDat]) VALUES(@IDPhong,@IDKH,@LoaiTG,@TgDat)";
+                string themHD = "INSERT INTO [dbo].[Thuephong]([IDPhong],[IDKH],[LoaiTG],[TgDat]) VALUES(@IDPhong,@IDKH,@LoaiTG,@TgDat)";
                 Cmd = new SqlCommand(themHD, Cnn);
                 Cmd.Parameters.AddWithValue("@ID", tbTenKh.Text);
                 Cmd.Parameters.AddWithValue("@NgayDat", tbSDT.Text);
@@ -112,9 +112,49 @@ namespace quanlykhachsan.giaodien
 
         }
         #endregion=========================================
-        private void button1_Click(object sender, EventArgs e)
+        #region====== Truy Cập Kh ==================
+        string makh;
+        private string Xuat_kq(SqlDataReader kq)
         {
-            AddKH();
+            StringBuilder strb = new StringBuilder();
+            while (kq.Read())
+            {
+
+                //-- Truy chỉ số cột
+                for (int i = 0; i < kq.FieldCount; i++)
+                    strb.Append(kq[i].ToString() + (i == kq.FieldCount - 1 ? "" : ":"));
+                strb.AppendLine();
+            }
+            return strb.ToString();
+        }
+        private void ShowMaKH()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string tamp = "SELECT TOP(1) WITH TIES IDKH FROM KhachHang ORDER BY IDKH DESC";
+                Cmd = new SqlCommand(tamp, Cnn);
+                SqlDataReader dr = Cmd.ExecuteReader();
+                makh = Xuat_kq(dr);
+                Cnn.Close();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi ShowMaHD", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+    
+    #endregion=======================================
+    private void button1_Click(object sender, EventArgs e)
+        {
+            if(KiemTraTextbox()==false)
+            {
+                AddKH();
+            }
+            
         }
         int time;
         private void cboxLoaiTg_SelectedIndexChanged(object sender, EventArgs e)
@@ -211,5 +251,6 @@ namespace quanlykhachsan.giaodien
             else
                 tbTGdat.Text = "";
         }
+        
     }
 }
