@@ -57,20 +57,58 @@ namespace quanlykhachsan.giaodien
         {
             Timphong(tbtimphong.Text);
         }
-        
+
+        string bt;
+        private string tmp(SqlDataReader kq)
+        {
+            StringBuilder strb = new StringBuilder();
+            while (kq.Read())
+            {
+
+                //-- Truy chỉ số cột
+                for (int i = 0; i < kq.FieldCount; i++)
+                    strb.Append(kq[i].ToString() + (i == kq.FieldCount - 1 ? "" : ":"));
+                strb.AppendLine();
+            }
+            return strb.ToString();
+        }
+        //--- truy cập và gán vào biến tạm
+        private void timtenphong(string x)
+        {
+            SqlConnection Cnn = db._DbContext();
+            Cnn.Open();
+            try
+            {
+
+                string tamp = "select TenPhong from Phong WHERE IDPhong = @ID ";
+                Cmd = new SqlCommand(tamp, Cnn);
+                Cmd.Parameters.Add(new SqlParameter("@ID",x));
+                SqlDataReader dr = Cmd.ExecuteReader();
+                bt = tmp(dr);
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Search Accounts!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+        }
         string bientam;
         private void Gribview_DSPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
                        
             bientam = this.Gribview_DSPhong.CurrentRow.Cells[4].Value.ToString();
-            
-            if(bientam.Trim()=="Trống")
+            timtenphong(this.Gribview_DSPhong.CurrentRow.Cells[0].Value.ToString());
+            if (bientam.Trim()=="Trống")
             {
-                MessageBox.Show("Phòng Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                Datphong dp = new Datphong(bt);
+                dp.ShowDialog();
+               
             }
             if (bientam.Trim() == "Đã Thuê")
             {
-                MessageBox.Show("Phòng Đã Thuê", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                ThanhToan tt = new ThanhToan(bt);
+                tt.ShowDialog();
             }
             if (bientam.Trim() == "Bảo Trì")
             {
