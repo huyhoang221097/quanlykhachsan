@@ -165,7 +165,15 @@ namespace quanlykhachsan.giaodien
 
         }
         #endregion=========================================
-       
+        private void settext()
+        {
+            tbTenKh.Text = string.Empty;
+            tbSDT.Text = string.Empty;
+            tbCMND.Text = string.Empty;
+            tbDiaChi.Text = string.Empty;
+            tbSoNguoi.Text = string.Empty;
+            tbTGdat.Text = string.Empty;
+        }
     private void button1_Click(object sender, EventArgs e)
         {
             if(KiemTraTextbox()==false)
@@ -174,6 +182,8 @@ namespace quanlykhachsan.giaodien
                 ShowMaKH();
                 AddThuephong();
                 AddThanhToan();
+                settext();
+                MessageBox.Show("Thành CÔng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
