@@ -21,7 +21,7 @@ namespace quanlykhachsan.giaodien
             InitializeComponent();
         }
 
-        private void Thuephong_Load(object sender, EventArgs e)
+        public void Thuephong_Load(object sender, EventArgs e)
         {
             LoadGrid();
         }
@@ -114,9 +114,12 @@ namespace quanlykhachsan.giaodien
             {
                 MessageBox.Show("Phòng Đang Bảo Trì", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
-
+            
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadGrid();
+        }
     }
 }

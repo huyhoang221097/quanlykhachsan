@@ -226,7 +226,7 @@ namespace quanlykhachsan.giaodien
                 AddThanhToan();
                 settext();
                 Thuephong tt = new Thuephong();
-                tt.LoadGrid();
+                    tt.LoadGrid();
                 MessageBox.Show("Thành CÔng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
