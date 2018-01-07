@@ -163,6 +163,7 @@
             this.tbSoNguoi.Name = "tbSoNguoi";
             this.tbSoNguoi.Size = new System.Drawing.Size(256, 31);
             this.tbSoNguoi.TabIndex = 3;
+            this.tbSoNguoi.TextChanged += new System.EventHandler(this.tbSoNguoi_TextChanged);
             // 
             // label7
             // 

@@ -189,5 +189,16 @@ namespace quanlykhachsan.giaodien
             else
                 tbCMND.Text = "";
         }
+
+        private void tbSoNguoi_TextChanged(object sender, EventArgs e)
+        {
+            int n = 0;
+            if (int.TryParse(this.tbSoNguoi.Text, out n))
+            {
+
+            }
+            else
+                tbSoNguoi.Text = "";
+        }
     }
 }
