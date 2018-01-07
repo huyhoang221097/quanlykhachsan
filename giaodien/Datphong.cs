@@ -56,6 +56,35 @@ namespace quanlykhachsan.giaodien
 
         }
         #endregion=========================================
+        
+        #region========== Insert Thanh Toan ============
+        private void AddThanhToan()
+        {
+            SqlConnection Cnn = db._DbContext();
+
+
+            try
+            {
+                Cnn.Open();
+                string themHD = "INSERT INTO [dbo].[ThanhToan]([ID],[Ngaydat],[Ngaytra],[Thanhtien]) VALUES(@ID,@Ngaydat,@Ngaytra,@Thanhtien)";
+                Cmd = new SqlCommand(themHD, Cnn);
+                Cmd.Parameters.AddWithValue("@ID", tbTenKh.Text);
+                Cmd.Parameters.AddWithValue("@NgayDat", tbSDT.Text);
+                Cmd.Parameters.AddWithValue("@Ngaytra", tbCMND.Text);
+                Cmd.Parameters.AddWithValue("@Thanhtien", tbDiaChi.Text);
+                Cmd.ExecuteNonQuery();
+                Cnn.Close();
+            }
+            catch (SqlException)
+
+            {
+                MessageBox.Show("Lỗi Khách Hàng Table");
+
+            }
+
+
+        }
+        #endregion=========================================
         private void button1_Click(object sender, EventArgs e)
         {
 
