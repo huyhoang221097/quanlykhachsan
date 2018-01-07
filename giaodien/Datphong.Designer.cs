@@ -183,6 +183,7 @@
             this.tbTGdat.Name = "tbTGdat";
             this.tbTGdat.Size = new System.Drawing.Size(79, 31);
             this.tbTGdat.TabIndex = 3;
+            this.tbTGdat.TextChanged += new System.EventHandler(this.tbTGdat_TextChanged);
             // 
             // cboxLoaiTg
             // 

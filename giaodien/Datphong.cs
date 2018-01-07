@@ -192,13 +192,24 @@ namespace quanlykhachsan.giaodien
 
         private void tbSoNguoi_TextChanged(object sender, EventArgs e)
         {
-            int n = 0;
+            int n = 1;
             if (int.TryParse(this.tbSoNguoi.Text, out n))
             {
 
             }
             else
                 tbSoNguoi.Text = "";
+        }
+
+        private void tbTGdat_TextChanged(object sender, EventArgs e)
+        {
+            int n = 1;
+            if (int.TryParse(this.tbTGdat.Text, out n))
+            {
+
+            }
+            else
+                tbTGdat.Text = "";
         }
     }
 }
