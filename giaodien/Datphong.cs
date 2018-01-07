@@ -46,7 +46,7 @@ namespace quanlykhachsan.giaodien
         }
 
         #region====== Truy Cập Kh ==================
-        int makh;
+        int makh,id;
         int gia;
         private string Xuat_kq(SqlDataReader kq)
         {
@@ -71,6 +71,25 @@ namespace quanlykhachsan.giaodien
                 Cmd = new SqlCommand(tamp, Cnn);
                 object IdKh = Cmd.ExecuteScalar();
                 makh = (int)IdKh;
+                Cnn.Close();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi ShowMaKh", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void ShowIDThuephong()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string tamp = "SELECT TOP(1) WITH TIES ID FROM ThuePhong ORDER BY ID DESC";
+                Cmd = new SqlCommand(tamp, Cnn);
+                object IdKh = Cmd.ExecuteScalar();
+                id = (int)IdKh;
                 Cnn.Close();
 
 
@@ -142,6 +161,7 @@ namespace quanlykhachsan.giaodien
         private void AddThanhToan()
         {
             ShowGia();
+            ShowIDThuephong();
             SqlConnection Cnn = db._DbContext();
             int tg = int.Parse(tbTGdat.Text);
             int s = gia * tg;
@@ -150,9 +170,9 @@ namespace quanlykhachsan.giaodien
                 Cnn.Open();
                 string themHD = "INSERT INTO [dbo].[ThanhToan]([ID],[Ngaydat],[Ngaytra],[Thanhtien]) VALUES(@ID,@Ngaydat,@Ngaytra,@Thanhtien)";
                 Cmd = new SqlCommand(themHD, Cnn);
-                Cmd.Parameters.AddWithValue("@ID", tbTenKh.Text);
-                Cmd.Parameters.AddWithValue("@NgayDat", year + "-" + month + "-" + day);
-                Cmd.Parameters.AddWithValue("@Ngaytra", year + "-" + month + "-" + day);
+                Cmd.Parameters.AddWithValue("@ID",id);
+                Cmd.Parameters.AddWithValue("@NgayDat", year + "/" + month + "/" + day);
+                Cmd.Parameters.AddWithValue("@Ngaytra", year + "/" + month + "/" + day);
                 Cmd.Parameters.AddWithValue("@Thanhtien",s);
                 Cmd.ExecuteNonQuery();
                 Cnn.Close();
@@ -160,13 +180,33 @@ namespace quanlykhachsan.giaodien
             catch (SqlException)
 
             {
-                MessageBox.Show("Lỗi Khách Hàng Table");
+                MessageBox.Show("Lỗi them TToan");
 
             }
 
 
         }
         #endregion=========================================
+        private void UpdateTT()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string themHD = "UPDATE [dbo].[Phong] SET [IDtrangThai] = @tt WHERE IDPhong = @IDPhong";
+                Cmd = new SqlCommand(themHD, Cnn);
+                Cmd.Parameters.AddWithValue("@tt",2);
+                Cmd.Parameters.AddWithValue("@IDPhong",idphong);
+                Cmd.ExecuteNonQuery();
+                Cnn.Close();
+            }
+            catch (SqlException)
+
+            {
+                MessageBox.Show("Lỗi Update Tongtien !");
+
+            }
+        }
         private void settext()
         {
             tbTenKh.Text = string.Empty;
@@ -181,10 +221,12 @@ namespace quanlykhachsan.giaodien
             if(KiemTraTextbox()==false)
             {
                 AddKH();
-                
+                UpdateTT();
                 AddThuephong();
                 AddThanhToan();
                 settext();
+                Thuephong tt = new Thuephong();
+                tt.LoadGrid();
                 MessageBox.Show("Thành CÔng !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             

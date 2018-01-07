@@ -28,7 +28,7 @@ namespace quanlykhachsan.giaodien
 
 
 
-        private void LoadGrid()
+        public void LoadGrid()
         {
             SqlConnection Cnn = db._DbContext();
             Cnn.Open();
