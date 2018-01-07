@@ -46,7 +46,7 @@ namespace quanlykhachsan.giaodien
         }
 
         #region====== Truy Cập Kh ==================
-        string makh;
+        int makh;
         int gia;
         private string Xuat_kq(SqlDataReader kq)
         {
@@ -69,8 +69,8 @@ namespace quanlykhachsan.giaodien
                 Cnn.Open();
                 string tamp = "SELECT TOP(1) WITH TIES IDKH FROM KhachHang ORDER BY IDKH DESC";
                 Cmd = new SqlCommand(tamp, Cnn);
-                SqlDataReader dr = Cmd.ExecuteReader();
-                makh = Xuat_kq(dr);
+                object IdKh = Cmd.ExecuteScalar();
+                makh = (int)IdKh;
                 Cnn.Close();
 
 
@@ -105,18 +105,20 @@ namespace quanlykhachsan.giaodien
         #region========== Insert Thuê Phòng ============
         private void AddThuephong()
         {
-            SqlConnection Cnn = db._DbContext();
+            ShowMaKH();
+            
 
 
             try
             {
+                SqlConnection Cnn = db._DbContext();
                 Cnn.Open();
                 string themHD = "INSERT INTO [dbo].[Thuephong]([IDPhong],[IDKH],[LoaiTG],[TgDat]) VALUES(@IDPhong,@IDKH,@LoaiTG,@TgDat)";
                 Cmd = new SqlCommand(themHD, Cnn);
-                Cmd.Parameters.AddWithValue("@IDPhong", idphong);
+                Cmd.Parameters.AddWithValue("@IDPhong", idphong.Trim());
                 Cmd.Parameters.AddWithValue("@IDKH", makh);
                 Cmd.Parameters.AddWithValue("@LoaiTG", time);
-                Cmd.Parameters.AddWithValue("@TGDat", tbTGdat);
+                Cmd.Parameters.AddWithValue("@TGDat", tbTGdat.Text);
                 Cmd.ExecuteNonQuery();
                 Cnn.Close();
             }
@@ -151,7 +153,7 @@ namespace quanlykhachsan.giaodien
                 Cmd.Parameters.AddWithValue("@ID", tbTenKh.Text);
                 Cmd.Parameters.AddWithValue("@NgayDat", year + "-" + month + "-" + day);
                 Cmd.Parameters.AddWithValue("@Ngaytra", year + "-" + month + "-" + day);
-                Cmd.Parameters.AddWithValue("@Thanhtien",s.ToString());
+                Cmd.Parameters.AddWithValue("@Thanhtien",s);
                 Cmd.ExecuteNonQuery();
                 Cnn.Close();
             }
@@ -179,7 +181,7 @@ namespace quanlykhachsan.giaodien
             if(KiemTraTextbox()==false)
             {
                 AddKH();
-                ShowMaKH();
+                
                 AddThuephong();
                 AddThanhToan();
                 settext();
@@ -196,13 +198,13 @@ namespace quanlykhachsan.giaodien
                     MessageBox.Show("Lỗi: 'Tên Khách Hàng' ít nhất 4 Ký Tự!", "Thống Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return true;
             }
-            if (int.Parse(tbSDT.Text) < 9 || int.Parse(tbSDT.Text) >11)
+            if (tbSDT.Text.Length < 9 || tbSDT.Text.Length >11)
             {
                 MessageBox.Show("Lỗi: 'SĐT' phải 9 tới 10 số!", "Thống Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
 
-            if (int.Parse(tbCMND.Text) != 9)
+            if (tbCMND.Text.Length != 9)
             {
                 MessageBox.Show("Lỗi: 'Số SMND' phải 9 số!", "Thống Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
@@ -212,7 +214,7 @@ namespace quanlykhachsan.giaodien
                 MessageBox.Show("Lỗi: 'Địa chỉ' ít nhất 4 Ký Tự!", "Thống Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
             }
-            if (int.Parse(tbSoNguoi.Text) <1 || int.Parse(tbCMND.Text) > 4 )
+            if (int.Parse(tbSoNguoi.Text) <1 || int.Parse(tbSoNguoi.Text) > 4 )
             {
                 MessageBox.Show("Lỗi: 'Phòng' chỉ chứa từ 1 đến 4 người!", "Thống Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
