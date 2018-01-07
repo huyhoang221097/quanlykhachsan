@@ -31,18 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbTenphong = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbTenKh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbCMND = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbSoNguoi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tbTGdat = new System.Windows.Forms.TextBox();
+            this.cboxLoaiTg = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -78,13 +78,13 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên khách hàng";
             // 
-            // textBox1
+            // tbTenKh
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(211, 67);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 31);
-            this.textBox1.TabIndex = 3;
+            this.tbTenKh.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTenKh.Location = new System.Drawing.Point(211, 67);
+            this.tbTenKh.Name = "tbTenKh";
+            this.tbTenKh.Size = new System.Drawing.Size(256, 31);
+            this.tbTenKh.TabIndex = 3;
             // 
             // label3
             // 
@@ -97,13 +97,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Số điện thoại";
             // 
-            // textBox2
+            // tbSDT
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(211, 115);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(256, 31);
-            this.textBox2.TabIndex = 3;
+            this.tbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSDT.Location = new System.Drawing.Point(211, 115);
+            this.tbSDT.Name = "tbSDT";
+            this.tbSDT.Size = new System.Drawing.Size(256, 31);
+            this.tbSDT.TabIndex = 3;
             // 
             // label4
             // 
@@ -116,13 +116,13 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "CMND";
             // 
-            // textBox3
+            // tbCMND
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(211, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(256, 31);
-            this.textBox3.TabIndex = 3;
+            this.tbCMND.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCMND.Location = new System.Drawing.Point(211, 171);
+            this.tbCMND.Name = "tbCMND";
+            this.tbCMND.Size = new System.Drawing.Size(256, 31);
+            this.tbCMND.TabIndex = 3;
             // 
             // label5
             // 
@@ -135,13 +135,13 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Địa Chỉ";
             // 
-            // textBox4
+            // tbDiaChi
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(211, 226);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(256, 31);
-            this.textBox4.TabIndex = 3;
+            this.tbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDiaChi.Location = new System.Drawing.Point(211, 226);
+            this.tbDiaChi.Name = "tbDiaChi";
+            this.tbDiaChi.Size = new System.Drawing.Size(256, 31);
+            this.tbDiaChi.TabIndex = 3;
             // 
             // label6
             // 
@@ -154,13 +154,13 @@
             this.label6.TabIndex = 2;
             this.label6.Text = "Số lượng người";
             // 
-            // textBox5
+            // tbSoNguoi
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(211, 281);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(256, 31);
-            this.textBox5.TabIndex = 3;
+            this.tbSoNguoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSoNguoi.Location = new System.Drawing.Point(211, 281);
+            this.tbSoNguoi.Name = "tbSoNguoi";
+            this.tbSoNguoi.Size = new System.Drawing.Size(256, 31);
+            this.tbSoNguoi.TabIndex = 3;
             // 
             // label7
             // 
@@ -173,22 +173,24 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Thời gian đặt";
             // 
-            // textBox6
+            // tbTGdat
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(211, 340);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(79, 31);
-            this.textBox6.TabIndex = 3;
+            this.tbTGdat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTGdat.Location = new System.Drawing.Point(211, 340);
+            this.tbTGdat.Name = "tbTGdat";
+            this.tbTGdat.Size = new System.Drawing.Size(79, 31);
+            this.tbTGdat.TabIndex = 3;
             // 
-            // comboBox1
+            // cboxLoaiTg
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(309, 340);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 33);
-            this.comboBox1.TabIndex = 4;
+            this.cboxLoaiTg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboxLoaiTg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxLoaiTg.FormattingEnabled = true;
+            this.cboxLoaiTg.Location = new System.Drawing.Point(309, 340);
+            this.cboxLoaiTg.Name = "cboxLoaiTg";
+            this.cboxLoaiTg.Size = new System.Drawing.Size(158, 33);
+            this.cboxLoaiTg.TabIndex = 4;
+            this.cboxLoaiTg.SelectedIndexChanged += new System.EventHandler(this.cboxLoaiTg_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -209,14 +211,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(490, 474);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cboxLoaiTg);
+            this.Controls.Add(this.tbTGdat);
+            this.Controls.Add(this.tbSoNguoi);
+            this.Controls.Add(this.tbDiaChi);
+            this.Controls.Add(this.tbCMND);
+            this.Controls.Add(this.tbSDT);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbTenKh);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -240,18 +242,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbTenphong;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbTenKh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbCMND;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbSoNguoi;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox tbTGdat;
+        private System.Windows.Forms.ComboBox cboxLoaiTg;
         private System.Windows.Forms.Button button1;
     }
 }
