@@ -1,6 +1,6 @@
 ﻿namespace quanlykhachsan.giaodien
 {
-    partial class Form2
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form2";
+            this.Text = "Form3";
         }
 
         #endregion
