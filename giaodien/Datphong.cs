@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ namespace quanlykhachsan.giaodien
 {
     public partial class Datphong : Form
     {
+        DbContext db = new DbContext();
+        private SqlCommand Cmd;
+        private SqlDataAdapter da = new SqlDataAdapter();
         public Datphong(string x)
         {
             InitializeComponent();
@@ -23,7 +27,35 @@ namespace quanlykhachsan.giaodien
             cboxLoaiTg.Items.Add("Giờ");
             cboxLoaiTg.Items.Add("Ngày");
         }
+        #region========== Insert Khách Hàng ============
+        private void AddKH()
+        {
+            SqlConnection Cnn = db._DbContext();
 
+            
+            try
+            {
+                Cnn.Open();
+                string themHD = "INSERT INTO [dbo].[KhachHang]([TenKH],[SDT],[CMND],[DiaChi],[SL]) VALUES(@TenKH,@SDT,@CMND,@DiaChi,@SL)";
+                Cmd = new SqlCommand(themHD, Cnn);
+                Cmd.Parameters.AddWithValue("@TenKH", tbTenKh.Text);
+                Cmd.Parameters.AddWithValue("@SDT", tbSDT.Text);
+                Cmd.Parameters.AddWithValue("@CMND", tbCMND.Text);
+                Cmd.Parameters.AddWithValue("@DiaChi", tbDiaChi.Text);
+                Cmd.Parameters.AddWithValue("@SL", tbSoNguoi.Text);
+                Cmd.ExecuteNonQuery();
+                Cnn.Close();
+            }
+            catch (SqlException)
+
+            {
+                MessageBox.Show("Lỗi Khách Hàng Table");
+
+            }
+
+
+        }
+        #endregion=========================================
         private void button1_Click(object sender, EventArgs e)
         {
 
