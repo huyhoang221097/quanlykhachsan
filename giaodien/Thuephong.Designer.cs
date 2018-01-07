@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Gribview_DSPhong = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabPhong.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gribview_DSPhong)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.btTimPhong);
             this.tabPage1.Controls.Add(this.tbtimphong);
             this.tabPage1.Controls.Add(this.label2);
@@ -130,6 +132,16 @@
             this.tabPage2.Text = "Khách Hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(573, 46);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(174, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Thuephong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.TextBox tbtimphong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btTimPhong;
+        private System.Windows.Forms.Button button1;
     }
 }

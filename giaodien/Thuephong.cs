@@ -21,14 +21,14 @@ namespace quanlykhachsan.giaodien
             InitializeComponent();
         }
 
-        private void Thuephong_Load(object sender, EventArgs e)
+        public void Thuephong_Load(object sender, EventArgs e)
         {
             LoadGrid();
         }
 
 
 
-        private void LoadGrid()
+        public void LoadGrid()
         {
             SqlConnection Cnn = db._DbContext();
             Cnn.Open();
@@ -114,9 +114,12 @@ namespace quanlykhachsan.giaodien
             {
                 MessageBox.Show("Phòng Đang Bảo Trì", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
-
+            
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadGrid();
+        }
     }
 }
