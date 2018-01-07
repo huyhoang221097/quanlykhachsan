@@ -90,7 +90,7 @@ namespace quanlykhachsan.giaodien
             }
             catch (Exception)
             {
-                MessageBox.Show("Lỗi Search Accounts!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show("Lỗi !", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
         }
         string bientam;
