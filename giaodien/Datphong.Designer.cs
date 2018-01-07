@@ -124,6 +124,7 @@
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(256, 31);
             this.tbCMND.TabIndex = 3;
+            this.tbCMND.TextChanged += new System.EventHandler(this.tbCMND_TextChanged);
             // 
             // label5
             // 
