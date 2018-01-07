@@ -112,18 +112,30 @@ namespace quanlykhachsan
                         if (bientam.Trim() == "admin")
                         {
                             admin ad = new admin();
+                            this.Visible = false;
+                            if ((new admin()).ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            { this.Visible = true; }
                             ad.Show();
+                            this.Close();
 
                         }
                         if (bientam.Trim() == "manager")
                         {
                             QLphong ql = new QLphong();
+                            this.Visible = false;
+                            if ((new QLphong()).ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            { this.Visible = true; }
                             ql.Show();
+                            this.Close();
                         }
                         if (bientam.Trim() == "salesman")
                         {
                             Thuephong tp = new Thuephong();
+                            this.Visible = false;
+                            if ((new Thuephong()).ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            { this.Visible = true; }
                             tp.Show();
+                            this.Close();
                         }
                     }
                     else
