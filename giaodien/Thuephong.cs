@@ -57,5 +57,28 @@ namespace quanlykhachsan.giaodien
         {
             Timphong(tbtimphong.Text);
         }
+        
+        string bientam;
+        private void Gribview_DSPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                       
+            bientam = this.Gribview_DSPhong.CurrentRow.Cells[4].Value.ToString();
+            
+            if(bientam.Trim()=="Trống")
+            {
+                MessageBox.Show("Phòng Trống", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            if (bientam.Trim() == "Đã Thuê")
+            {
+                MessageBox.Show("Phòng Đã Thuê", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+            if (bientam.Trim() == "Bảo Trì")
+            {
+                MessageBox.Show("Phòng Đang Bảo Trì", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+
+        }
+
+        
     }
 }

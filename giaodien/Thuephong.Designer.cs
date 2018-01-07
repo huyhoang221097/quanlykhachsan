@@ -118,6 +118,7 @@
             this.Gribview_DSPhong.ReadOnly = true;
             this.Gribview_DSPhong.Size = new System.Drawing.Size(730, 439);
             this.Gribview_DSPhong.TabIndex = 0;
+            this.Gribview_DSPhong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gribview_DSPhong_CellContentClick);
             // 
             // tabPage2
             // 
@@ -138,6 +139,7 @@
             this.MaximumSize = new System.Drawing.Size(1372, 780);
             this.Name = "Thuephong";
             this.Text = "Quản Lý Khách Sạn - Thuê Phòng";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Thuephong_Load);
             this.tabPhong.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
