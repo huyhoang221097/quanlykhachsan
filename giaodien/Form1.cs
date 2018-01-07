@@ -122,7 +122,8 @@ namespace quanlykhachsan
                         }
                         if (bientam.Trim() == "salesman")
                         {
-                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            Thuephong tp = new Thuephong();
+                            tp.Show();
                         }
                     }
                     else

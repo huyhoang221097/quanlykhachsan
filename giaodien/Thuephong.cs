@@ -16,5 +16,10 @@ namespace quanlykhachsan.giaodien
         {
             InitializeComponent();
         }
+
+        private void Thuephong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -44,7 +44,7 @@
             this.tabPhong.Location = new System.Drawing.Point(12, 49);
             this.tabPhong.Name = "tabPhong";
             this.tabPhong.SelectedIndex = 0;
-            this.tabPhong.Size = new System.Drawing.Size(1331, 692);
+            this.tabPhong.Size = new System.Drawing.Size(1331, 614);
             this.tabPhong.TabIndex = 0;
             // 
             // tabPage1
@@ -53,7 +53,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1323, 666);
+            this.tabPage1.Size = new System.Drawing.Size(1323, 588);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phòng";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -63,7 +63,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 31);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(730, 627);
+            this.dataGridView1.Size = new System.Drawing.Size(730, 399);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
@@ -76,15 +76,16 @@
             this.tabPage2.Text = "Khách Hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // Thuephong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 741);
+            this.ClientSize = new System.Drawing.Size(1356, 675);
             this.Controls.Add(this.tabPhong);
             this.MaximumSize = new System.Drawing.Size(1372, 780);
-            this.Name = "Form2";
+            this.Name = "Thuephong";
             this.Text = "Quản Lý Khách Sạn - Thuê Phòng";
+            this.Load += new System.EventHandler(this.Thuephong_Load);
             this.tabPhong.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
