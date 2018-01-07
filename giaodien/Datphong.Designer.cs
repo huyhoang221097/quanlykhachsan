@@ -104,6 +104,7 @@
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(256, 31);
             this.tbSDT.TabIndex = 3;
+            this.tbSDT.TextChanged += new System.EventHandler(this.tbSDT_TextChanged);
             // 
             // label4
             // 
