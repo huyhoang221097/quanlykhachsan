@@ -12,9 +12,14 @@ namespace quanlykhachsan.giaodien
 {
     public partial class ThanhToan : Form
     {
-        public ThanhToan()
+        public ThanhToan(string x)
         {
             InitializeComponent();
+        }
+
+        private void ThanhToan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
