@@ -1,6 +1,6 @@
 ﻿namespace quanlykhachsan.giaodien
 {
-    partial class Form2
+    partial class Thuephong
     {
         /// <summary>
         /// Required designer variable.

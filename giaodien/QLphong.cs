@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace quanlykhachsan.giaodien
 {
-    public partial class Form3 : Form
+    public partial class QLphong : Form
     {
-        public Form3()
+        public QLphong()
         {
             InitializeComponent();
         }

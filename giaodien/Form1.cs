@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using quanlykhachsan.giaodien;
 
 namespace quanlykhachsan
 {
@@ -110,7 +111,9 @@ namespace quanlykhachsan
                     {
                         if (bientam.Trim() == "admin")
                         {
-                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            admin ad = new admin();
+                            ad.Show();
+
                         }
                         if (bientam.Trim() == "manager")
                         {

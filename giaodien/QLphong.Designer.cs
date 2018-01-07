@@ -1,6 +1,6 @@
 ﻿namespace quanlykhachsan.giaodien
 {
-    partial class Form3
+    partial class QLphong
     {
         /// <summary>
         /// Required designer variable.
