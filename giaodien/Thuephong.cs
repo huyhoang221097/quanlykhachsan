@@ -101,7 +101,7 @@ namespace quanlykhachsan.giaodien
             timtenphong(this.Gribview_DSPhong.CurrentRow.Cells[0].Value.ToString());
             if (bientam.Trim()=="Trống")
             {
-                Datphong dp = new Datphong(bt);
+                Datphong dp = new Datphong(bt, this.Gribview_DSPhong.CurrentRow.Cells[0].Value.ToString());
                 dp.ShowDialog();
                
             }
