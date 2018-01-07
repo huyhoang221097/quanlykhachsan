@@ -117,7 +117,8 @@ namespace quanlykhachsan
                         }
                         if (bientam.Trim() == "manager")
                         {
-                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                            QLphong ql = new QLphong();
+                            ql.Show();
                         }
                         if (bientam.Trim() == "salesman")
                         {
