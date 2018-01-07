@@ -54,14 +54,46 @@ namespace quanlykhachsan
             {
             }
         }
-        
-        
+        string bientam;
+        private string tmp(SqlDataReader kq)
+        {
+            StringBuilder strb = new StringBuilder();
+            while (kq.Read())
+            {
+
+                //-- Truy chỉ số cột
+                for (int i = 0; i < kq.FieldCount; i++)
+                    strb.Append(kq[i].ToString() + (i == kq.FieldCount - 1 ? "" : ":"));
+                strb.AppendLine();
+            }
+            return strb.ToString();
+        }
+        //--- truy cập và gán vào biến tạm
+        private void ShowQuyenhan()
+        {
+            SqlConnection Cnn = db._DbContext();
+            Cnn.Open();
+            try
+            {
+                
+                string tamp = "select Roles from Accounts WHERE ID = '" + Taikhoan.Text + "' ";
+                Cmd = new SqlCommand(tamp, Cnn);
+                SqlDataReader dr = Cmd.ExecuteReader();
+                bientam= tmp(dr);
+                
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Search Accounts!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
+        }
 
        
         
         public void button1_Click(object sender, EventArgs e)
         {
-            
+            ShowQuyenhan();
             try
             {
                 SqlConnection Cnn = db._DbContext();
@@ -74,7 +106,25 @@ namespace quanlykhachsan
                 int K = (int)Cmd.ExecuteScalar();
                 if (K == 1)
                 {
-                    MessageBox.Show(Taikhoan.Text, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    if (bientam.Trim() != null)
+                    {
+                        if (bientam.Trim() == "admin")
+                        {
+                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        if (bientam.Trim() == "manager")
+                        {
+                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                        if (bientam.Trim() == "salesman")
+                        {
+                            MessageBox.Show(bientam, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bạn chưa có quyền đăng nhập!" + "\nHệ Thống đang cập nhật... Vui lòng liên hệ Quản Trị Viên!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    }
                 }
                 else
                 {
