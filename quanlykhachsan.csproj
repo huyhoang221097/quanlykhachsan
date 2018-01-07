@@ -52,11 +52,23 @@
     <Compile Include="giaodien\admin.Designer.cs">
       <DependentUpon>admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="giaodien\Datphong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giaodien\Datphong.Designer.cs">
+      <DependentUpon>Datphong.cs</DependentUpon>
+    </Compile>
     <Compile Include="giaodien\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="giaodien\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="giaodien\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="giaodien\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="giaodien\Thuephong.cs">
       <SubType>Form</SubType>
@@ -73,6 +85,9 @@
     <Compile Include="ketnoi\AppDbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="giaodien\Datphong.resx">
+      <DependentUpon>Datphong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="giaodien\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
