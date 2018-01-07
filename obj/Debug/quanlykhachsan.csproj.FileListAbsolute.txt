@@ -8,4 +8,4 @@ E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.csproj.GenerateResource.Cach
 E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.exe
 E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.pdb
 E:\HuyHoang\quanlykhachsan\obj\Debug\Quanlykhachsan.Form1.resources
-E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.giaodien.Form2.resources
+E:\HuyHoang\quanlykhachsan\obj\Debug\quanlykhachsan.giaodien.Thuephong.resources

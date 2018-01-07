@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace quanlykhachsan.giaodien
 {
-    public partial class Form2 : Form
+    public partial class Thuephong : Form
     {
-        public Form2()
+        public Thuephong()
         {
             InitializeComponent();
+        }
+
+        private void Thuephong_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
