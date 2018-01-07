@@ -104,6 +104,7 @@
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(256, 31);
             this.tbSDT.TabIndex = 3;
+            this.tbSDT.TextChanged += new System.EventHandler(this.tbSDT_TextChanged);
             // 
             // label4
             // 
@@ -123,6 +124,7 @@
             this.tbCMND.Name = "tbCMND";
             this.tbCMND.Size = new System.Drawing.Size(256, 31);
             this.tbCMND.TabIndex = 3;
+            this.tbCMND.TextChanged += new System.EventHandler(this.tbCMND_TextChanged);
             // 
             // label5
             // 
@@ -161,6 +163,7 @@
             this.tbSoNguoi.Name = "tbSoNguoi";
             this.tbSoNguoi.Size = new System.Drawing.Size(256, 31);
             this.tbSoNguoi.TabIndex = 3;
+            this.tbSoNguoi.TextChanged += new System.EventHandler(this.tbSoNguoi_TextChanged);
             // 
             // label7
             // 
@@ -180,6 +183,7 @@
             this.tbTGdat.Name = "tbTGdat";
             this.tbTGdat.Size = new System.Drawing.Size(79, 31);
             this.tbTGdat.TabIndex = 3;
+            this.tbTGdat.TextChanged += new System.EventHandler(this.tbTGdat_TextChanged);
             // 
             // cboxLoaiTg
             // 
