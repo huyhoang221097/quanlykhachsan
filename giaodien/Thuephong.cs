@@ -57,5 +57,10 @@ namespace quanlykhachsan.giaodien
         {
             Timphong(tbtimphong.Text);
         }
+
+        private void Gribview_DSPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
