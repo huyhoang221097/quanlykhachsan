@@ -32,7 +32,7 @@ namespace quanlykhachsan.giaodien
         {
             SqlConnection Cnn = db._DbContext();
             Cnn.Open();
-            string sql = "select IDphong as [Mã Phòng], TenPhong as [Tên Phòng], sogiuong [Số Giường], Loaiphong as [Loại Phòng], Tentrangthai as [Trạng Thái] From Phong P INNER JOIN TrangThai T On P.IDTrangthai=T.IDTrangthai ORDER BY IDPhong ASC";
+            string sql = "select IDphong as [Mã Phòng], TenPhong as [Tên Phòng], sogiuong [Số Giường], Loaiphong as [Loại Phòng], Tentrangthai as [Trạng Thái] From Phong P INNER JOIN TrangThai T On P.IDTrangthai=T.IDTrangthai";
             Cmd = new SqlCommand(sql, Cnn);
             SqlDataAdapter alap = new SqlDataAdapter(Cmd);
             DataTable Table = new DataTable();

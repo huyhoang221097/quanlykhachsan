@@ -30,12 +30,12 @@
         {
             this.tabPhong = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btTimPhong = new System.Windows.Forms.Button();
             this.tbtimphong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Gribview_DSPhong = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btTimPhong = new System.Windows.Forms.Button();
             this.tabPhong.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gribview_DSPhong)).BeginInit();
@@ -65,6 +65,19 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phòng";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btTimPhong
+            // 
+            this.btTimPhong.BackColor = System.Drawing.Color.Green;
+            this.btTimPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTimPhong.ForeColor = System.Drawing.Color.White;
+            this.btTimPhong.Location = new System.Drawing.Point(573, 91);
+            this.btTimPhong.Name = "btTimPhong";
+            this.btTimPhong.Size = new System.Drawing.Size(174, 31);
+            this.btTimPhong.TabIndex = 4;
+            this.btTimPhong.Text = "Tìm phòng";
+            this.btTimPhong.UseVisualStyleBackColor = false;
+            this.btTimPhong.Click += new System.EventHandler(this.btTimPhong_Click);
             // 
             // tbtimphong
             // 
@@ -97,10 +110,12 @@
             // 
             // Gribview_DSPhong
             // 
+            this.Gribview_DSPhong.AllowUserToAddRows = false;
             this.Gribview_DSPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Gribview_DSPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Gribview_DSPhong.Location = new System.Drawing.Point(17, 131);
             this.Gribview_DSPhong.Name = "Gribview_DSPhong";
+            this.Gribview_DSPhong.ReadOnly = true;
             this.Gribview_DSPhong.Size = new System.Drawing.Size(730, 439);
             this.Gribview_DSPhong.TabIndex = 0;
             // 
@@ -113,19 +128,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Khách Hàng";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btTimPhong
-            // 
-            this.btTimPhong.BackColor = System.Drawing.Color.Green;
-            this.btTimPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTimPhong.ForeColor = System.Drawing.Color.White;
-            this.btTimPhong.Location = new System.Drawing.Point(573, 91);
-            this.btTimPhong.Name = "btTimPhong";
-            this.btTimPhong.Size = new System.Drawing.Size(174, 31);
-            this.btTimPhong.TabIndex = 4;
-            this.btTimPhong.Text = "Tìm phòng";
-            this.btTimPhong.UseVisualStyleBackColor = false;
-            this.btTimPhong.Click += new System.EventHandler(this.btTimPhong_Click);
             // 
             // Thuephong
             // 
