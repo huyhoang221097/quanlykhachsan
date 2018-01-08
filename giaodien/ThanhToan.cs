@@ -16,8 +16,8 @@ namespace quanlykhachsan.giaodien
         DbContext db = new DbContext();
         private SqlCommand Cmd;
         private SqlDataAdapter da = new SqlDataAdapter();
-        string idphong,Tenkh,loaiphong,loaitg;
-        int cmnd, sl, tg, thanhtien;
+        string idphong,Tenkh,loaiphong;
+        int cmnd, sl, tg, thanhtien, loaitg;
         public ThanhToan(string x, string y)
         {
             InitializeComponent();
@@ -122,6 +122,44 @@ namespace quanlykhachsan.giaodien
                 MessageBox.Show("Lỗi tg", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void ShowLoaiTG()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string tamp = "SELECT TOP(1) WITH TIES LoaiTg from ThuePhong where IDPhong='" + idphong + "' ORDER BY ID DESC";
+                Cmd = new SqlCommand(tamp, Cnn);
+                object IdKh = Cmd.ExecuteScalar();
+                loaitg = (int)IdKh;
+                Cnn.Close();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Loai tg", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void ShowThanhTien()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string tamp = "SELECT TOP(1) WITH TIES LoaiTg from ThuePhong where IDPhong='" + idphong + "' ORDER BY ID DESC";
+                Cmd = new SqlCommand(tamp, Cnn);
+                object IdKh = Cmd.ExecuteScalar();
+                loaitg = (int)IdKh;
+                Cnn.Close();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi Loai phong", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void ThanhToan_Load(object sender, EventArgs e)
         {
             ShowMaKH();
@@ -134,6 +172,15 @@ namespace quanlykhachsan.giaodien
             lbLoaiPhong.Text = loaiphong;
             Showtg();
             lbtg.Text = tg.ToString();
+            ShowLoaiTG();
+            if(loaitg==1)
+            {
+                lbLoaitg.Text = "Giờ";
+            }
+            if (loaitg == 2)
+            {
+                lbLoaitg.Text = "Ngày";
+            }
         }
 
         private void btThanhToan_Click(object sender, EventArgs e)
