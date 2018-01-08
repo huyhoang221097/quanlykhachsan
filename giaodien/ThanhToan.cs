@@ -184,10 +184,30 @@ namespace quanlykhachsan.giaodien
             ShowThanhTien();
             lbThanhtien.Text = thanhtien.ToString();
         }
+        private void UpdateTT()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string themHD = "UPDATE [dbo].[Phong] SET [IDtrangThai] = @tt WHERE IDPhong = @IDPhong";
+                Cmd = new SqlCommand(themHD, Cnn);
+                Cmd.Parameters.AddWithValue("@tt", 1);
+                Cmd.Parameters.AddWithValue("@IDPhong", idphong);
+                Cmd.ExecuteNonQuery();
+                Cnn.Close();
+            }
+            catch (SqlException)
 
+            {
+                MessageBox.Show("Lỗi Update Tongtien !");
+
+            }
+        }
         private void btThanhToan_Click(object sender, EventArgs e)
         {
-
+            UpdateTT();
+            MessageBox.Show("Ban có muốn thanh toán? click 'Yes'!", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }
