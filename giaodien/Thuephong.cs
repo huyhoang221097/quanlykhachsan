@@ -107,7 +107,7 @@ namespace quanlykhachsan.giaodien
             }
             if (bientam.Trim() == "Đã Thuê")
             {
-                ThanhToan tt = new ThanhToan(bt);
+                ThanhToan tt = new ThanhToan(bt, this.Gribview_DSPhong.CurrentRow.Cells[0].Value.ToString());
                 tt.ShowDialog();
             }
             if (bientam.Trim() == "Bảo Trì")
