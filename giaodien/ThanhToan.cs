@@ -109,7 +109,7 @@ namespace quanlykhachsan.giaodien
             try
             {
                 Cnn.Open();
-                string tamp = "SELECT TOP(1) WITH TIES Tgdat ThuePhong where IDPhong='" + idphong + "' ORDER BY t.ID DESC";
+                string tamp = "SELECT TOP(1) WITH TIES TgDat from ThuePhong where IDPhong='" + idphong + "' ORDER BY ID DESC";
                 Cmd = new SqlCommand(tamp, Cnn);
                 object IdKh = Cmd.ExecuteScalar();
                 tg = (int)IdKh;
