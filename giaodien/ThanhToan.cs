@@ -103,6 +103,25 @@ namespace quanlykhachsan.giaodien
                 MessageBox.Show("Lỗi Loai phong", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private void Showtg()
+        {
+            SqlConnection Cnn = db._DbContext();
+            try
+            {
+                Cnn.Open();
+                string tamp = "SELECT TOP(1) WITH TIES Tgdat ThuePhong where IDPhong='" + idphong + "' ORDER BY t.ID DESC";
+                Cmd = new SqlCommand(tamp, Cnn);
+                object IdKh = Cmd.ExecuteScalar();
+                tg = (int)IdKh;
+                Cnn.Close();
+
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi tg", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
         private void ThanhToan_Load(object sender, EventArgs e)
         {
             ShowMaKH();
@@ -113,6 +132,8 @@ namespace quanlykhachsan.giaodien
             lbsonguoi.Text = sl.ToString();
             ShowLoaiPhong();
             lbLoaiPhong.Text = loaiphong;
+            Showtg();
+            lbtg.Text = tg.ToString();
         }
 
         private void btThanhToan_Click(object sender, EventArgs e)
