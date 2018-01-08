@@ -208,6 +208,7 @@ namespace quanlykhachsan.giaodien
         {
             UpdateTT();
             MessageBox.Show("Ban có muốn thanh toán? click 'Yes'!", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            this.Close();
         }
     }
 }
